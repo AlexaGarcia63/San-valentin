@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbum de Amor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="showAlbum()">📸 Álbum de Fotos</a></li>
+            <li><a href="javascript:void(0);" onclick="showSongs()">🎶 Nuestra vida en canciones</a></li>
+            <li><a href="javascript:void(0);" onclick="showReasons()">💖 Razones por las que te amo</a></li>
+            <li><a href="javascript:void(0);" onclick="showCountdown()">⏳ Cuenta Regresiva</a></li> <!-- Nueva pestaña para cuenta regresiva -->
+            <li><a href="javascript:void(0);" onclick="showGames()">🎮 Jueguitos</a></li>
+
+        </ul>
+    </nav>
+
+<!--******************************************************************************************************************************************************************-->
+    <!-- ************************ -->
+    <!-- Sección del álbum de fotos (Grid de 3 columnas) -->
+    <!-- ************************ -->
+
+    <div class="album-container" id="album">
+        <h1>💖 Nuestro Álbum de Recuerdos 💖</h1>
+        <div class="photo-grid">
+            <div class="photo" onclick="showMessage(0)">
+                <img src="foto1.jpg" alt="Recuerdo 1">
+                <p id="message1" class="message hidden">Mi niño guapo 💕</p>
+            </div>
+            <div class="photo" onclick="showMessage(1)">
+                <img src="foto2.jpg" alt="Recuerdo 2">
+                <p id="message2" class="message hidden">Mi niño poderoso 🐥</p>
+            </div>
+            <div class="photo" onclick="showMessage(2)">
+                <img src="foto3.jpg" alt="Recuerdo 3">
+                <p id="message3" class="message hidden">Mi niño asombroso✨</p>
+            </div>
+            <div class="photo" onclick="showMessage(3)">
+                <img src="foto4.jpg" alt="Recuerdo 4">
+                <p id="message4" class="message hidden">Mi niño Muy hermoso 🍽️❤️</p>
+            </div>
+            <div class="photo" onclick="showMessage(4)">
+                <img src="foto5.jpg" alt="Recuerdo 5">
+                <p id="message5" class="message hidden">Mi niño precioso 😂💖</p>
+            </div>
+            <div class="photo" onclick="showMessage(5)">
+                <img src="foto6.jpg" alt="Recuerdo 6">
+                <p id="message6" class="message hidden">Mi niño armonioso 🤗</p>
+            </div>
+        </div>
+    </div>
+<!--******************************************************************************************************************************************************************-->
+    <!-- ************************ -->   
+    <!-- Sección de canciones -->
+    <!-- ************************ -->
+
+    <div class="songs-container" id="songs-container" style="display: none;">
+        <h1>🎶 Nuestra vida en canciones 🎶</h1>
+        <div class="photo-grid">
+            <!-- Canciones con sus respectivas imágenes y mensajes -->
+            <div class="photo" onclick="playSong('video_games')">
+                <img src="foto_video_games.jpg" alt="Video Games">
+                <p id="msg_video_games" class="message hidden">🎮 Hay amores que se sienten como un videojuego infinito</p>
+            </div>
+            <div class="photo" onclick="playSong('sweater_weather')">
+                <img src="foto_sweater_weather.jpg" alt="Sweater Weather">
+                <p id="msg_sweater_weather" class="message hidden">🌧️ Las palabras no siempre son suficientes, pero el clima ayuda</p>
+            </div>
+            <div class="photo" onclick="playSong('i_wanna_be_yours')">
+                <img src="foto_i_wanna_be_yours.jpg" alt="I Wanna Be Yours">
+                <p id="msg_i_wanna_be_yours" class="message hidden">✒️ Si pudieras ser poesía, serías mi favorita</p>
+            </div>
+            <div class="photo" onclick="playSong('fireproof')">
+                <img src="foto_fireproof.jpg" alt="Fireproof">
+                <p id="msg_fireproof" class="message hidden">🔥 Algunas cosas simplemente duran para siempre</p>
+            </div>
+            <div class="photo" onclick="playSong('die_for_you')">
+                <img src="foto_die_for_you.jpg" alt="Die For You">
+                <p id="msg_die_for_you" class="message hidden">🖤 Te amo incluso en mis peores días</p>
+            </div>
+            <div class="photo" onclick="playSong('perfect')">
+                <img src="foto_perfect.jpg" alt="Perfect">
+                <p id="msg_perfect" class="message hidden">💍 Algunas historias de amor sí tienen un final feliz</p>
+            </div>
+            <div class="photo" onclick="playSong('sunflower')">
+                <img src="foto_sunflower.jpg" alt="Sunflower">
+                <p id="msg_sunflower" class="message hidden">🌻 Tú eres mi sol, incluso en los días más oscuros</p>
+            </div>
+            <div class="photo" onclick="playSong('halleys_comet')">
+                <img src="foto_halleys_comet.jpg" alt="Halleys Comet">
+                <p id="msg_halleys_comet" class="message hidden">✨ Si el universo tuviera un sonido, se parecería a ti</p>
+            </div>
+            <div class="photo" onclick="playSong('late_night_talking')">
+                <img src="foto_late_night_talking.jpg" alt="Late Night Talking">
+                <p id="msg_late_night_talking" class="message hidden">🌙 Las mejores conversaciones ocurren a media noche</p>
+            </div>
+            <div class="photo" onclick="playSong('baby_im_yours')">
+                <img src="foto_baby_im_yours.jpg" alt="Baby I'm Yours">
+                <p id="msg_baby_im_yours" class="message hidden">⏳ Siempre serás el 'para siempre' que quiero</p>
+            </div>
+            <div class="photo" onclick="playSong('born_to_die')">
+                <img src="foto_born_to_die.jpg" alt="Born To Die">
+                <p id="msg_born_to_die" class="message hidden">🌹 Algunas promesas duran vidas enteras</p>
+            </div>
+            <div class="photo" onclick="playSong('la_vuelta_al_mundo')">
+                <img src="foto_la_vuelta_al_mundo.jpg" alt="La Vuelta al Mundo">
+                <p id="msg_la_vuelta_al_mundo" class="message hidden">✈️ Si amar es un viaje, contigo iría al fin del mundo</p>
+            </div>
+            <div class="photo" onclick="playSong('birds_of_a_feather')">
+                <img src="foto_birds_of_a_feather.jpg" alt="Birds of a Feather">
+                <p id="msg_birds_of_a_feather" class="message hidden">🕊️ El destino tenía escrito esto para nosotros</p>
+            </div>
+            <div class="photo" onclick="playSong('hostage')">
+                <img src="foto_hostage.jpg" alt="Hostage">
+                <p id="msg_hostage" class="message hidden">🚪 Algunas personas te atrapan sin remedio</p>
+            </div>
+            <div class="photo" onclick="playSong('lovely')">
+                <img src="foto_lovely.jpg" alt="Lovely">
+                <p id="msg_lovely" class="message hidden">💫 Si el amor tuviera sonido, sería como esta canción</p>
+            </div>
+            <div class="photo" onclick="playSong('juno')">
+                <img src="foto_juno.jpg" alt="Juno">
+                <p id="msg_juno" class="message hidden">💋 Me encantas </p>
+            </div>
+            <div class="photo" onclick="playSong('bed_chem')">
+                <img src="foto_bed_chem.jpg" alt="Bed Chem">
+                <p id="msg_bed_chem" class="message hidden">🧪 Química explosiva, pero adictiva</p>
+            </div>
+        </div>
+
+        <!-- Reproductor de Spotify -->
+        <div class="spotify-container">
+            <h2 id="song-title">Selecciona una canción 🎶</h2>
+            <iframe id="spotify-player" style="border-radius:12px" 
+            width="100%" height="380" frameborder="0" allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+    </div>
+<!--******************************************************************************************************************************************************************-->
+<!-- ************************ -->
+<!-- Sección Razones por las que te amo -->
+<!-- ************************ -->
+
+<div class="reasons-container" id="reasons-container" style="display: none;">
+    <h2>Razones por las que te amo 💖</h2>
+    <div id="reasons-list">
+        <div>1. Me haces sentir amada y segura todos los días.</div>
+        <div>2. Admiro la forma en que siempre estás ahí cuando te necesito.</div>
+        <div>3. Me gusta vivir contigo todas las experiencias posibles.</div>
+        <div>4. Tu sonrisa.</div>
+        <div>5. Eres mi apoyo incondicional.</div>
+        <div>6. Tu risa.</div>
+        <div>7. Me enseñas a ser mejor persona cada día.</div>
+        <div>8. Tu apoyo</div>
+        <div>9. Tus besos y abrazos.</div>
+        <div>10. Tú eres mi refugio.</div>
+        <div>11. Siempre me haces reír.</div>
+        <div>12. Me llenas de amor con cada detalle.</div>      
+        <div>13. Tus abrazos.</div> 
+        <div>14. Me haces sentir especial.</div>
+        <div>15. Nuestras llamadas.</div>
+        <div>16. Nuestras bromas.</div>
+        <div>17. Como me escuchas</div>
+        <div>18. Nuestros recuerdos.</div>
+        <div>19. Como me miras.</div>
+        <div>20. Nunca me siento sola cuando estoy contigo.</div>
+        <div>21. Haces que los días malos sean mejores.</div>
+        <div>22. Tus historias.</div>
+        <div>23. Tu fuerza.</div> 
+        <div>24. Tus sorpresas.</div>
+        <div>25. Tu paciencia.</div>
+        <div>26. Tus ojos.</div> 
+        <div>27. Tus gestos.</div> 
+        <div>28. Tu presencia.</div>
+        <div>29. Me das paz con solo estar a mi lado.</div>
+        <div>30. Tu sinceridad.</div> 
+        <div>31. Adoro nuestros abrazos largos.</div>
+        <div>32. Me entiendes mejor que nadie.</div>
+        <div>33. Por ser responsable.</div> 
+        <div>34. Por inteligente.</div> 
+        <div>35. Me inspiras a ser más fuerte y valiente.</div> 
+        <div>36. No hay un solo día en el que no piense en ti.</div> 
+        <div>37. Me encanta compartir mis sueños contigo.</div> 
+        <div>38. Siempre tienes las palabras adecuadas para animarme.</div>
+        <div>39. Eres mi persona favorita en todo el mundo.</div>
+        <div>40. Me encanta dormir abrazada a ti.</div> 
+        <div>41. Por leal.</div> 
+        <div>42. Siempre me haces sentir querida.</div> 
+        <div>43. Por nuestras llamadas.</div>     
+        <div>44. Siempre me ayudas cuando lo necesito.</div>
+        <div>45. Por nuestros mensajitos.</div> 
+        <div>46. Por nuestras salidas.</div> 
+        <div>47. Tu voz.</div>
+        <div>48. Me haces sentir como en casa.</div>
+        <div>49. Por jugar juntos.</div> 
+        <div>50. Porque siempre pierdes en los jueguitos.</div> 
+        <div>51. Me encanta la forma en que me miras.</div> 
+        <div>52. Por como actuas </div> 
+        <div>53. Por pasar tiempo conmigo.</div> 
+        <div>54. Por consentirme.</div> 
+        <div>55. Contigo cada día es especial.</div>
+        <div>56. Por tratarme bonito.</div> 
+        <div>57. No cambiaría nada de ti.</div>
+        <div>58. Adoro cómo me haces sentir segura.</div> 
+        <div>59. Por guapo.</div> 
+        <div>60. Por quererme aunque sea poquito.</div> 
+        <div>61. Por aguantarme.</div> 
+        <div>62. Me encanta soñar contigo.</div> 
+        <div>63. Amo cuando me tomas de la mano.</div> 
+        <div>64. Me encanta compartir mis días contigo.</div>
+        <div>65. Eres mi felicidad.</div>
+        <div>66. Adoro tu ternura.</div> 
+        <div>67. Ser feliz</div> 
+        <div>68. Me encanta que siempre piensas en mí.</div>
+        <div>69. Adoro cuando cantas.</div>
+        <div>70. Siempre das lo mejor de ti. </div> 
+        <div>71. Adoro nuestra complicidad.</div> 
+        <div>72. Eres mi persona favorita para siempre.</div> 
+        <div>73. Eres mi mundo entero. </div> 
+        <div>74. No hay nadie como tú.</div> 
+        <div>75. Contigo me siento en paz.</div> 
+        <div>76. Amo nuestra conexión única.</div>
+        <div>77. Por ser mi niño precioso. </div>
+        <div>78. Por tu tono de voz. </div> 
+        <div>79. Amo la forma en la que me abrazas.</div> 
+        <div>80. Siempre estás a mi lado cuando más te necesito.</div> 
+        <div>81. Por celoso</div> 
+        <div>82. Por llevarme a todos lados</div> 
+        <div>83. Por darme de tu comida.</div> 
+        <div>84. Por comer de mi comida</div> 
+        <div>85. Por guapisisisisimo </div> 
+        <div>86. Por que te amo más </div>
+        <div>87. Por sonreir solo conmigo.</div> 
+        <div>88. Por respirar solo conmigo.</div> 
+        <div>89. Por no salir sin permiso</div> 
+        <div>90. Por que solo me ves a mi.</div> 
+        <div>91. Por que no vas a ver más You.</div> 
+        <div>92. Por hacerme feliz.</div> 
+        <div>93. Por ignorar a todas las demás </div> 
+        <div>94. Por que eres solamentente mio.</div> 
+        <div>95. Por usar el rastreador que te puse.</div> 
+        <div>96. Por no salir nadie mas que conmigo.</div> 
+        <div>97. Por solo hablarme a mi y a nadie más.</div>
+        <div>98. Por eliminar a todas tus amiguitas. </div> 
+        <div>99. Eres mi mayor amor.</div>
+        <div>100. Te amo con todo mi corazón. ❤️</div>
+    </div>
+</div>
+
+<!--******************************************************************************************************************************************************************-->
+    <!-- ************************ -->
+    <!-- Sección Cuenta Regresiva -->
+    <!-- ************************ -->
+    
+    <div class="countdown-container" id="countdown-container" style="display: none;">
+        <h2>💖 Cuenta Regresiva 💖</h2>
+        <div id="countdown">
+            <!-- Aquí se mostrarán las cuentas regresivas -->
+        </div>
+    </div>
+<!--******************************************************************************************************************************************************************-->
+    <!-- ************************ -->
+    <!-- Sección de jueguitos -->
+    <!-- ************************ -->
+
+    <div class="games-container" id="games-container" style="display: none;">
+        <h1>🎮 Jueguitos 🎮</h1>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="showMemorama()">🧠 Memorama</a></li>
+            <li><a href="javascript:void(0);" onclick="showPuzzle()">🧩 Puzzle</a></li>
+        </ul>
+    </div>
+
+<!--******************************************************************************************************************************************************************-->
+   <!-- ************************ -->
+    <!--------- Memorama-- -------->
+    <!-- ************************ -->
+    <div class="memorama-container" id="memorama-container" style="display: none;">
+        <h2>🧠 Memorama 🧠</h2>
+        <div class="memorama-grid" id="memorama-grid"></div>
+    </div>
+
+    <!-- Mensaje de la pareja encontrada -->
+<div id="match-message" style="display: none;">
+    <p id="match-text"></p>
+</div>
+
+<!-- Mensaje de la pareja encontrada -->
+<div id="match-message" style="display: none; background-color: #ff7b9b; padding: 20px; border-radius: 10px; color: white; font-size: 18px; text-align: center;">
+    <p id="match-text"></p>
+</div>
+
+
+
+
+
+   <!-- ************************ -->
+    <!--------- Puzzle-- -------->
+    <!-- ************************ -->
+
+<!-- Sección Puzzle (oculta hasta que se seleccione) -->
+<div class="puzzle-container" id="puzzle-container" style="display: none;">
+    <h2>🧩 Puzzle Misterioso 🧩</h2>
+    
+    <!-- Cofre Misterioso -->
+    <div id="mystery-box" onclick="openMysteryBox()">
+        <img src="cofre.jpg" alt="Cofre Misterioso">
+        <p>¡Haz clic para descubrir la imagen del puzzle!</p>
+    </div>
+
+    <!-- Contenedor del puzzle -->
+    <div id="puzzle-board" style="display: none;"></div>
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

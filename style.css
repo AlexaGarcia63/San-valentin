@@ -1,0 +1,484 @@
+/********************************
+   *        BASE        *
+*********************************/
+
+/* Fondo con imagen */
+body {
+    font-family: Arial, sans-serif;
+    background: url('imagenfondo.jpg') no-repeat center center fixed;
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Barra de navegación */
+nav {
+    background: linear-gradient(135deg, #f8c2c7, #ff9a8b); /* Degradado suave de rosa */
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #ff7b9b; /* Sutil borde rosa */
+}
+
+/* Estilo del contenedor de la lista */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Fuente más estilizada */
+}
+
+/* Estilo de los elementos de la lista */
+nav ul li {
+    margin: 0 25px;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease; /* Efecto de transformación y color */
+}
+
+/* Estilo de los enlaces */
+nav ul li a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+/* Efecto hover en los enlaces */
+nav ul li a:hover {
+    background-color: #ff7b9b; /* Color de fondo suave */
+    color: #fff;
+    transform: scale(1.1); /* Agranda ligeramente el enlace */
+}
+
+/* Efecto en los elementos de la lista al pasar el ratón */
+nav ul li:hover {
+    transform: translateY(-5px); /* Sube ligeramente el ítem al hacer hover */
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: #ff7b9b;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff6a8c;
+}
+
+/***********************************************************************************************************************/
+/********************************
+   *    RAZONES DE AMOR        *
+*********************************/
+
+/* Estilos para la sección Razones por las que te amo */
+.reasons-container {
+    margin-top: 80px; /* Para que no se superponga con la barra de navegación */
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.reasons-container h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #ff7b9b;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#reasons-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#reasons-list div {
+    background-color: #ffe4e1;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #ff7b9b;
+    text-align: left;
+}
+
+/***********************************************************************************************************************/
+
+/********************************
+   *        COUNTDOWN        *
+*********************************/
+/* Sección de Cuenta Regresiva */
+.countdown-container {
+    margin-top: 80px; 
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.countdown-container h2 {
+    font-size: 28px;
+    color: #ff7b9b;
+    margin-bottom: 20px;
+}
+
+#countdown {
+    font-size: 22px;
+    color: #ff7b9b;
+    font-weight: bold;
+}
+
+/* Añadir efecto de animación */
+.countdown-container #countdown span {
+    font-size: 40px;
+    color: #ff6a8c;
+    font-weight: 700;
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: #ffe4e1;
+    margin: 10px;
+}
+
+/***********************************************************************************************************************/
+/********************************
+   *        ALBUM        *
+*********************************/
+/* Estilo del álbum de fotos */
+.album-container {
+    margin-top: 80px; /* Para que no se superponga con la barra de navegación */
+}
+
+.album-container h1 {
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Estilo del grid de fotos */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Estilo de cada foto en el álbum */
+.photo {
+    position: relative;
+    background-color: white;
+    padding: 10px;
+    border: 5px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Efecto de zoom */
+}
+
+/* Imagen de cada foto (horizontal) */
+.photo img {
+    width: 100%;
+    height: auto;  /* Hacemos que la altura sea automática para hacer la imagen horizontal */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out; /* Efecto de zoom */
+}
+
+/* Animación de zoom en las fotos al pasar el mouse */
+.photo:hover img {
+    transform: scale(1.1); /* Aumenta ligeramente la imagen */
+}
+
+/* Contenedor del mensaje de la foto */
+.message {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo tipo Polaroid */
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    display: none; /* Inicialmente oculto */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Mostrar el mensaje cuando se hace hover */
+.photo:hover .message {
+    display: block;
+}
+
+/***********************************************************************************************************************/
+
+/********************************
+   *        CANCIONES        *
+*********************************/
+
+/* Estilo de las canciones */
+.songs-container {
+    display: none;
+    padding-top: 80px; /* Para que no se superponga con la barra de navegación */
+}
+
+.songs-container h1 {
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Estilo del grid de canciones */
+.songs-container .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Estilo de cada canción */
+.songs-container .photo {
+    position: relative;
+    background-color: white;
+    padding: 10px;
+    border: 5px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Efecto de zoom */
+}
+
+/* Imagen de cada canción */
+.songs-container .photo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out; /* Efecto de zoom */
+}
+
+/* Animación de zoom en las canciones al pasar el mouse */
+.songs-container .photo:hover img {
+    transform: scale(1.1); /* Aumenta ligeramente la imagen */
+}
+
+/* Contenedor del mensaje de la canción */
+.songs-container .message {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo tipo Polaroid */
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    display: none; /* Inicialmente oculto */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Mostrar el mensaje cuando se hace hover */
+.songs-container .photo:hover .message {
+    display: block;
+}
+
+/* Estilo del reproductor de Spotify */
+.spotify-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/********************************
+   *        Jueguitos        *
+*********************************/
+/* Estilo para la sección de Jueguitos */
+.games-container {
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* Estilo para las opciones de los juegos (Memorama y Puzzle) */
+.games-container ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Usar flexbox para alinearlos horizontalmente */
+    justify-content: center; /* Alinea las opciones en el centro */
+    gap: 20px; /* Espaciado entre los elementos */
+}
+
+/* Estilo de los elementos de la lista */
+.games-container ul li {
+    margin: 0;
+}
+
+/* Estilo de los enlaces de opciones dentro de Jueguitos */
+.games-container a {
+    font-size: 24px;
+    color: #ff7b9b;
+    text-decoration: none;
+    padding: 15px 25px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.games-container a:hover {
+    background-color: #ff7b9b;
+    color: white;
+    transform: scale(1.1);
+}
+
+
+/********************************
+   *        Memorama        *
+*********************************/
+/* Estilo para el contenedor de memorama */
+.memorama-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Estilo para el grid de memorama (4x3) */
+.memorama-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    grid-template-rows: repeat(3, 1fr); /* 3 filas */
+    gap: 20px;
+    max-width: 480px; /* Ajuste de ancho máximo */
+    margin: auto;
+}
+
+/* Estilo para cada carta */
+.memorama-card {
+    width: 120px;
+    height: 120px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* Contenedor interno para el flip */
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    transform: rotateY(0deg); /* CORREGIDO: empieza mostrando la parte trasera */
+}
+
+/* Lógica del giro */
+.memorama-card.flipped .card-inner {
+    transform: rotateY(180deg); /* Voltea la carta para mostrar la imagen */
+}
+
+/* Estilo para la parte frontal (imagen de la carta) */
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+
+/* Imagen de la carta en la parte frontal */
+.card-front {
+    transform: rotateY(180deg); /* CORREGIDO: la imagen inicia oculta */
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Parte trasera de la carta */
+.card-back {
+    background-color: #ff7b9b; /* Color rosa */
+    transform: rotateY(0deg); /* Se mantiene visible al inicio */
+}
+
+/********************************
+   *        Mensaje de Pareja  *
+*********************************/
+#match-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff7b9b;  /* Fondo rosa */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    display: none;  /* Inicialmente oculto */
+    z-index: 100;  /* Asegura que se vea encima de otros elementos */
+    text-align: center;
+}
+
+
+
+/********************************
+   *        Puzzle        *
+*********************************/
+.puzzle-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#image-selector {
+    margin-bottom: 20px;
+}
+
+#image-selector button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff7b9b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#image-selector button:hover {
+    background-color: #ff6a8c;
+}
+
+#puzzle-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);  /* 4 columnas */
+    grid-template-rows: repeat(4, 100px);     /* 4 filas */
+    gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.puzzle-piece {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    cursor: pointer;
+    border: 2px solid #ff7b9b;
+    border-radius: 5px;
+}
+
+
